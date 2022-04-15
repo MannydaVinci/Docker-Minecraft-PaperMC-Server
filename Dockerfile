@@ -6,7 +6,7 @@ RUN apk add curl jq
 
 LABEL Marc Tönsing <marc@marc.tv>
 
-ARG version=1.18.2
+ARG version=1.18.1
 
 
 ########################################################
@@ -41,11 +41,11 @@ RUN tar -x -C /usr/local/bin -f /tmp/rcon-cli.tgz rcon-cli && \
 VOLUME "/data"
 
 # Expose minecraft port
-EXPOSE 25565/tcp
-EXPOSE 25565/udp
+EXPOSE 12346/tcp
+EXPOSE 12346/udp
 
 # Set memory size
-ARG memory_size=3G
+ARG memory_size=10G
 ENV MEMORYSIZE=$memory_size
 
 # Set Java Flags
